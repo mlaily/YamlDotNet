@@ -169,7 +169,6 @@
     <Compile Include="Core\Events\SequenceStyle.cs" />
     <Compile Include="Core\Events\StreamEnd.cs" />
     <Compile Include="Core\Events\StreamStart.cs" />
-    <Compile Include="Core\FakeList.cs" />
     <Compile Include="Core\ForwardAnchorNotSupportedException.cs" />
     <Compile Include="Core\HashCode.cs" />
     <Compile Include="Core\IEmitter.cs" />

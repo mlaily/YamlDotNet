@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using YamlDotNet.Core.Events;
@@ -1759,9 +1760,7 @@ namespace YamlDotNet.Core
                 return false;
             }
 
-            // Todo: must be something better than this FakeList
-            var eventList = new FakeList<ParsingEvent>(events);
-            return eventList[0] is SequenceStart && eventList[1] is SequenceEnd;
+            return events.ElementAt(0) is SequenceStart && events.ElementAt(1) is SequenceEnd;
         }
 
         private bool CheckEmptyMapping()
@@ -1771,9 +1770,7 @@ namespace YamlDotNet.Core
                 return false;
             }
 
-            // Todo: must be something better than this FakeList
-            var eventList = new FakeList<ParsingEvent>(events);
-            return eventList[0] is MappingStart && eventList[1] is MappingEnd;
+            return events.ElementAt(0) is MappingStart && events.ElementAt(1) is MappingEnd;
         }
 
         #endregion
